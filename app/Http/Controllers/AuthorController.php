@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Http\Requests\StoreAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
+use App\Http\Resources\AuthorResource;
 
 class AuthorController extends Controller
 {
@@ -15,7 +16,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        return AuthorResource::collection(Author::all());
     }
 
     /**

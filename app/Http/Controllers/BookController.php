@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Http\Resources\BookResource;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class BookController extends Controller
 {
@@ -36,7 +39,13 @@ class BookController extends Controller
      */
     public function store(StoreBookRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $validated['image'] = Storage::put('images', new File($validated['image']), 'public');
+
+        Book::create($validated)->categories()->attach(explode(',', $validated['category_id']));
+
+        return BookResource::collection(Book::all());
     }
 
     /**
