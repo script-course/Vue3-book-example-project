@@ -33,17 +33,13 @@
     },
     "phpsab.fixerEnable": true,
     "phpsab.snifferEnable": true,
-    // "phpsab.snifferMode": "onType",
+    "phpsab.snifferMode": "onType",
     // ESLint settings
-    // "eslint.run": "onType",
-    // "eslint.workingDirectories": ["./resources/js"],
-    // "eslint.nodePath": "./node_modules",
-    // "editor.codeActionsOnSave": {
-    //     "source.fixAll.eslint": true
-    // },
-    // "typescript.tsdk": "node_modules\\typescript\\lib",
-    // Git settings
-    // "git.branchProtection": ["master", "development"],
-    // "git.branchWhitespaceChar": "-",
-    // "git.requireGitUserConfig": true
+    "eslint.run": "onType",
+    "eslint.workingDirectories": ["./resources/js"],
+    "eslint.nodePath": "./node_modules",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "typescript.tsdk": "node_modules\\typescript\\lib",
 }
