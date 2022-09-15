@@ -8,7 +8,7 @@ export const storeModuleFactory = (moduleName) => {
     const state = ref({});
     const getters = {
         /** Get all items from the store */
-        getAll: computed(() => Object.values(state.value)),
+        all: computed(() => Object.values(state.value)),
         /**
          * Get an item from the state by id
          */

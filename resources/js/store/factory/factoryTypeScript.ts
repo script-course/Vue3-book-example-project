@@ -78,8 +78,8 @@ export const storeModuleFactory = <T extends { id: number }>(
         },
     };
     return {
-        ...getters,
-        ...setters,
-        ...actions,
+        getters,
+        setters,
+        actions,
     };
 };
