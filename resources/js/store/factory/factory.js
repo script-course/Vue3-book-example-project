@@ -8,7 +8,7 @@ export const storeModuleFactory = (moduleName) => {
     const state = ref({});
     const getters = {
         /** Get all items from the store */
-        all: computed(() => Object.values(state.value)),
+        getAll: computed(() => Object.values(state.value)),
         /**
          * Get an item from the state by id
          */
@@ -62,8 +62,8 @@ export const storeModuleFactory = (moduleName) => {
         },
     };
     return {
-        ...getters,
-        ...setters,
-        ...actions,
+        getters,
+        setters,
+        actions,
     };
 };
